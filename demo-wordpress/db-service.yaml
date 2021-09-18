@@ -4,9 +4,11 @@ metadata:
   name: wordpress-mysql
   namespace: demo-wp
   labels:
-    app: wordpress
+    app: wordpress-mysql
 spec:
+  type: ClusterIP
   ports:
     - port: 3306
+      targetPort: 3306
   selector:
-    app: wordpress
+    app: wordpress-mysql

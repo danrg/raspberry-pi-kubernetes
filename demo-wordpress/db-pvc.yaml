@@ -4,7 +4,7 @@ metadata:
   name: mysql-pv-claim
   namespace: demo-wp
   labels:
-    app: wordpress
+    app: wordpress-mysql
 spec:
   accessModes:
     - ReadWriteOnce

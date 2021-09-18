@@ -4,16 +4,15 @@ metadata:
   name: wordpress-mysql
   namespace: demo-wp
   labels:
-    app: wordpress
+    app: wordpress-mysql
 spec:
-  nodeName: workernode01
   selector:
     matchLabels:
-      app: wordpress
+      app: wordpress-mysql
   template:
     metadata:
       labels:
-        app: wordpress
+        app: wordpress-mysql
     spec:
       containers:
       - image: mariadb:10.5.12-focal
@@ -22,7 +21,7 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           value: onlyDevelopment
         - name: MYSQL_DATABASE
-          value: wordpress
+          value: wordpress_db
         ports:
         - containerPort: 3306
           name: mysql

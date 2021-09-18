@@ -4,10 +4,11 @@ metadata:
   name: wp-pv-claim
   namespace: demo-wp
   labels:
-    app: wordpress
+    app: wordpress-web
 spec:
   accessModes:
     - ReadWriteOnce
+  storageClassName: local-path
   resources:
     requests:
       storage: 100M
